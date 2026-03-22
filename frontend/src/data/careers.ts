@@ -1,31 +1,38 @@
 export type Job = {
   id: number
+  category: string
   title: string
-  department: string
+  description: string
   location: string
-  closingDate: string
+  type: string
 }
 
 export const jobs: Job[] = [
   {
     id: 1,
+    category: 'Regulation',
     title: 'Licensing Officer',
-    department: 'Licensing',
+    description:
+      'Support licensing evaluations, stakeholder engagement, and compliance processes across communication services.',
     location: 'Gaborone',
-    closingDate: '30 April 2026',
+    type: 'Full-time',
   },
   {
     id: 2,
+    category: 'Legal',
     title: 'Legal and Policy Analyst',
-    department: 'Legal Affairs',
+    description:
+      'Provide legal and policy research to strengthen regulatory frameworks and support sector governance initiatives.',
     location: 'Gaborone',
-    closingDate: '07 May 2026',
+    type: 'Full-time',
   },
   {
     id: 3,
+    category: 'Compliance',
     title: 'Compliance Inspector',
-    department: 'Compliance',
+    description:
+      'Conduct monitoring and inspections to ensure adherence to standards, license terms, and consumer protection requirements.',
     location: 'Francistown',
-    closingDate: '15 May 2026',
+    type: 'Full-time',
   },
 ]

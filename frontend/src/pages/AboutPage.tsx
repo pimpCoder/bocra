@@ -1,25 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import type { IconType } from 'react-icons'
-import {
-  FiArrowLeft,
-  FiArrowRight,
-  FiBookOpen,
-  FiBriefcase,
-  FiGlobe,
-  FiLayers,
-  FiShield,
-  FiUsers,
-} from 'react-icons/fi'
-import { aboutSections, type AboutIconName } from '../data/about'
-
-const iconByName: Record<AboutIconName, IconType> = {
-  shield: FiShield,
-  book: FiBookOpen,
-  users: FiUsers,
-  briefcase: FiBriefcase,
-  globe: FiGlobe,
-  layers: FiLayers,
-}
+import { FiArrowLeft, FiArrowRight } from 'react-icons/fi'
+import { aboutSections } from '../data/about'
 
 function AboutPage() {
   const sections = useMemo(() => aboutSections, [])
@@ -120,10 +101,9 @@ function AboutPage() {
           isMobile
             ? 'h-[100svh] overflow-y-auto overflow-x-hidden snap-y snap-mandatory'
             : 'h-[100svh] overflow-x-auto overflow-y-hidden snap-x snap-mandatory flex'
-        } scroll-smooth`}
+        } scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden`}
       >
         {sections.map((section, index) => {
-          const Icon = iconByName[section.icon]
           const bgShade = index % 2 === 0 ? 'bg-slate-100' : 'bg-slate-200/70'
 
           return (
@@ -136,38 +116,31 @@ function AboutPage() {
                   : `h-[100svh] w-screen shrink-0 ${bgShade}`
               }`}
             >
-              <div className="mx-auto flex h-full w-full max-w-6xl items-center px-6 py-16 md:px-10">
-                <div
-                  className={`w-full rounded-3xl border border-slate-300/80 bg-white/85 p-7 shadow-[0_18px_60px_rgba(15,23,42,0.08)] backdrop-blur-sm md:p-10 ${
-                    activeIndex === index ? 'opacity-100 translate-y-0' : 'opacity-90 translate-y-2'
-                  } transition-all duration-500`}
-                >
-                  <div className="mb-5 flex items-center gap-3 text-slate-700">
-                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-300 bg-slate-50">
-                      <Icon className="h-5 w-5" />
-                    </span>
-                    <span className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-                      Section {index + 1}
-                    </span>
-                  </div>
-
+              <div
+                className={`mx-auto flex h-full w-full max-w-6xl items-center px-6 py-16 md:px-10 ${
+                  activeIndex === index ? 'opacity-100 translate-y-0' : 'opacity-95 translate-y-2'
+                } transition-all duration-500`}
+              >
+                <div className="w-full">
                   <h1 className="text-balance text-3xl font-extrabold tracking-tight text-slate-900 md:text-5xl">
                     {section.heading}
                   </h1>
-                  <p className="mt-4 max-w-3xl text-pretty text-base leading-relaxed text-slate-700 md:text-lg">
+                  <p className="mt-4 max-w-4xl text-pretty text-base leading-relaxed text-slate-700 md:text-lg">
                     {section.summary}
                   </p>
 
-                  <ul className="mt-6 grid gap-3 md:grid-cols-2">
-                    {section.bullets.map((point) => (
-                      <li
-                        key={point}
-                        className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm leading-relaxed text-slate-700 md:text-base"
-                      >
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
+                  {section.bullets.length > 0 ? (
+                    <ul className="mt-6 grid gap-3 md:grid-cols-2">
+                      {section.bullets.map((point) => (
+                        <li
+                          key={point}
+                          className="list-disc text-sm leading-relaxed text-slate-700 md:ml-6 md:text-base"
+                        >
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
                 </div>
               </div>
             </section>

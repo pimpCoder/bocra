@@ -42,7 +42,7 @@ const footerNavLinkClass = ({ isActive }) =>
 
 function Footer() {
   return (
-    <footer className="mt-12">
+    <footer>
       <section className="border-t-2 border-white bg-[#A5A7AB] text-white">
         <div className="mx-auto grid w-[min(1200px,94%)] grid-cols-1 gap-12 py-12 md:grid-cols-3">
           <div className="px-6 md:px-8">

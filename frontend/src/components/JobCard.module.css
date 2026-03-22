@@ -1,0 +1,53 @@
+.card {
+  padding: 1.15rem 0.25rem 1.15rem 0;
+  border-bottom: 1px solid #e6e8eb;
+  transition: background-color 180ms ease;
+  font-family: Inter, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.card:hover {
+  background: #f9fafb;
+}
+
+.category {
+  margin: 0;
+  color: #0a7aa6;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+
+.title {
+  margin: 0.4rem 0 0;
+  color: #10243e;
+  font-size: clamp(1.1rem, 1.9vw, 1.35rem);
+  font-weight: 700;
+}
+
+.description {
+  margin: 0.55rem 0 0;
+  color: #a5a7ab;
+  max-width: 76ch;
+}
+
+.metaRow {
+  margin-top: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: #5c6e83;
+}
+
+.metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.92rem;
+}
+
+.icon {
+  color: #7f91a7;
+  width: 0.96rem;
+  height: 0.96rem;
+}

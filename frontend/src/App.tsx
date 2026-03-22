@@ -4,12 +4,14 @@ import Footer from './components/Footer.jsx'
 import styles from './App.module.css'
 import AboutPage from './pages/AboutPage'
 import CareersPage from './pages/CareersPage'
+import ComplaintStatusPage from './pages/ComplaintStatusPage'
 import ComplaintsPage from './pages/ComplaintsPage'
 import HomePage from './pages/HomePage'
 import LegislationPage from './pages/LegislationPage'
 import LicensingPage from './pages/LicensingPage'
 import ProjectsPage from './pages/ProjectsPage'
 import TendersPage from './pages/TendersPage'
+import TrackComplaintPage from './pages/TrackComplaintPage'
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
           <Route path="/licensing" element={<LicensingPage />} />
           <Route path="/legislation" element={<LegislationPage />} />
           <Route path="/complaints" element={<ComplaintsPage />} />
+          <Route path="/complaints/track" element={<TrackComplaintPage />} />
+          <Route path="/complaints/status/:trackingId" element={<ComplaintStatusPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

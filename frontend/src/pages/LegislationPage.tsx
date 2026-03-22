@@ -5,14 +5,6 @@ import styles from './Page.module.css'
 function LegislationPage() {
   return (
     <>
-      <section className={styles.hero}>
-        <h1>Legislation</h1>
-        <p>
-          Acts, regulations, and policy instruments that define the Authority's
-          mandate and regulatory scope.
-        </p>
-      </section>
-
       <Section title="Legal Framework">
         <Card>
           <p className={styles.muted}>

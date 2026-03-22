@@ -33,14 +33,8 @@ export const aboutSections: AboutSection[] = [
     id: 'ceo-message',
     heading: 'A Word From The Chief Executive',
     summary:
-      'The improved BOCRA website reflects continued efforts to engage stakeholders more effectively, improve service delivery, and strengthen channels for public feedback.',
-    bullets: [
-      'New look and improved colour scheme and technical capabilities for easier navigation.',
-      'Responsive experience across multiple devices, including mobile handsets, without loss of functionality.',
-      'Improved integration with BOCRA online platforms, including social media.',
-      'Stakeholders are encouraged to explore the platform and share feedback for continuous improvement.',
-      'Martin Mokgware - Chief Executive.',
-    ],
+      'I have the pleasure to present to you, our valued stakeholder, the new and improved BOCRA website. The improved website marks our continuous efforts to better reach out to you and at the same time receive your feedback so that we can serve you better. The website carries a new look with improved colour scheme and technical capabilities to improve navigation and enhance your user experience. The website can now be accessed through a variety of devices including hand held devices like mobile handsets without a compromise on its functionality. It is also designed to link better with our other online platforms particularly social media platforms.\n\nI invite you to explore and provide feedback on your user experience. Your insights are crucial in helping us improve this platform in a way that meets your expectations.\nMartin Mokgware\nChief Executive',
+    bullets: [],
     icon: 'briefcase',
   },
   {
