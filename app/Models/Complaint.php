@@ -55,4 +55,9 @@ class Complaint extends Model
     {
         return $this->created_at->format('M d, Y H:i');
     }
+
+    public function statusHistories()
+    {
+    return $this->hasMany(ComplaintStatusHistory::class);
+    }
 }
