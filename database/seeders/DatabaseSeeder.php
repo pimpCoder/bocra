@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 namespace Database\Seeders;
 
@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         DB::statement('TRUNCATE TABLE personal_access_tokens RESTART IDENTITY CASCADE');
         DB::statement('TRUNCATE TABLE users RESTART IDENTITY CASCADE');
 
-        $this->call([
+        \->call([
             UserSeeder::class,
             ComplaintSeeder::class,
             LicenseSeeder::class,
