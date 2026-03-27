@@ -56,7 +56,6 @@ RUN sed -i '/<Directory \/var\/www\/html\/public>/,/<\/Directory>/ s/AllowOverri
 
 # Generate application key (this will be done at runtime instead of build time)
 # This avoids issues with .env file during build
-RUN php artisan key:generate --force
 
 # Expose port 80
 EXPOSE 80
