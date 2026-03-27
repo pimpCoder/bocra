@@ -40,6 +40,9 @@ RUN { \
 
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
 EXPOSE 80
 
-CMD ["apache2-foreground"]
+CMD ["/usr/local/bin/docker-entrypoint.sh"]

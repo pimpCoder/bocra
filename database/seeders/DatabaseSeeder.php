@@ -1,24 +1,25 @@
-<?php
- 
-// ═══════════════════════════════════════════════════════════════
-// FILE: database/seeders/DatabaseSeeder.php
-// Run with: php artisan db:seed
-// ═══════════════════════════════════════════════════════════════
- 
+﻿<?php
+
 namespace Database\Seeders;
- 
+
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
- 
+
 class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // Disable FK checks for the entire seed operation
-        // This lets us truncate tables that reference each other
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
- 
-        $this->call([
+        // PostgreSQL compatible — cascade truncate
+        DB::statement('TRUNCATE TABLE notifications RESTART IDENTITY CASCADE');
+        DB::statement('TRUNCATE TABLE complaint_status_histories RESTART IDENTITY CASCADE');
+        DB::statement('TRUNCATE TABLE complaints RESTART IDENTITY CASCADE');
+        DB::statement('TRUNCATE TABLE domain_registrations RESTART IDENTITY CASCADE');
+        DB::statement('TRUNCATE TABLE license_applications RESTART IDENTITY CASCADE');
+        DB::statement('TRUNCATE TABLE contents RESTART IDENTITY CASCADE');
+        DB::statement('TRUNCATE TABLE personal_access_tokens RESTART IDENTITY CASCADE');
+        DB::statement('TRUNCATE TABLE users RESTART IDENTITY CASCADE');
+
+        ->call([
             UserSeeder::class,
             ComplaintSeeder::class,
             LicenseSeeder::class,
@@ -26,8 +27,5 @@ class DatabaseSeeder extends Seeder
             ContentSeeder::class,
             NotificationSeeder::class,
         ]);
- 
-        // Re-enable FK checks after all seeders finish
-        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }
