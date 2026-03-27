@@ -168,6 +168,10 @@ Route::middleware(['auth:sanctum', 'role:staff,admin'])->group(function () {
     Route::get('/domains/stats/summary',   [DomainController::class, 'stats']);
 });
 
+// Test route
+Route::get('/test', function () {
+    return response()->json(['message' => 'API is working!'], 200);
+});
 // Admin only
 Route::middleware(['auth:sanctum', 'role:admin'])->group(function () {
     Route::delete('/domains/{id}',         [DomainController::class, 'destroy']);
