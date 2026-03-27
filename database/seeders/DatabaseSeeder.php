@@ -9,7 +9,6 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // PostgreSQL compatible — cascade truncate
         DB::statement('TRUNCATE TABLE notifications RESTART IDENTITY CASCADE');
         DB::statement('TRUNCATE TABLE complaint_status_histories RESTART IDENTITY CASCADE');
         DB::statement('TRUNCATE TABLE complaints RESTART IDENTITY CASCADE');
@@ -19,7 +18,7 @@ class DatabaseSeeder extends Seeder
         DB::statement('TRUNCATE TABLE personal_access_tokens RESTART IDENTITY CASCADE');
         DB::statement('TRUNCATE TABLE users RESTART IDENTITY CASCADE');
 
-        ->call([
+        $this->call([
             UserSeeder::class,
             ComplaintSeeder::class,
             LicenseSeeder::class,
